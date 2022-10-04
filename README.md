@@ -14,7 +14,6 @@
 ### Association
  has_many :products
  has_many :cards
- has_one :destinations
 
 ##  Destinationsテーブル
 
@@ -41,6 +40,7 @@
 ### Association
  belongs_to :user
  belongs_to :product
+ has_one :destination
 
 ##  Productsテーブル
 
