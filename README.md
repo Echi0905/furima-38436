@@ -1,22 +1,13 @@
-## Users テーブル
+# README
 
-| Column             | Type   | Options                        |
-| ------------------ | ------ | ------------------------------ |
-| nickname           | string | null: false                    | 
-| email              | string | null: false, unique: true      |
-| encrypted_password | string | null: false                    |
-| family_name        | string | null: false                    |
-| first_name         | string | null: false                    |
-| family_name_kana   | string | null: false                    |
-| first_name_kana    | string | null: false                    |
-| birth_day          | date   | null: false                    |
-| user_id            | integer| null: false, foreign_key: true |
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-### Association
- belongs_to :user
+Things you may want to cover:
 
-##  Destinationテーブル
+* Ruby version
 
+<<<<<<< HEAD
 | Column             | Type     | Options                        |
 | ------------------ | -------- | ------------------------------ |
 | post_code          | string   | null: false                    | 
@@ -26,26 +17,27 @@
 | building_name      | string   | null: false                    |
 | phone_number       | string   | null: false                    |
 | user_id            | integer  | null: false                    |
+=======
+* System dependencies
+>>>>>>> parent of 760e524 (ER図・README①)
 
-##  Cardテーブル
+* Configuration
 
-| Column             | Type   | Options                        |
-| ------------------ | ------ | ------------------------------ |
-| user_id            | string | null: false                    | 
-| product_name       | string | null: false                    |
+* Database creation
 
+<<<<<<< HEAD
 ### Association
  belongs_to :user
 
 ##  Productテーブル
+=======
+* Database initialization
+>>>>>>> parent of 760e524 (ER図・README①)
 
-| Column             | Type   | Options                        |
-| ------------------ | ------ | ------------------------------ |
-| name               | string | null: false                    | 
-| description        | string | null: false                    |
-| status             | string | null: false                    |
-| shipping_cost      | string | null: false                    |
-| shipping_days      | string | null: false                    |
-| prefecture_id      | string | null: false                    |
-| price              | string | null: false                    | 
+* How to run the test suite
 
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
