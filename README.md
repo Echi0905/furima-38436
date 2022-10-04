@@ -27,16 +27,19 @@
 | phone_number       | string    | null: false                    |
 | card               | references| null: false, foreign_key:true  |
 
+### Association
+ belongs_to :card
+
 ##  Cardsテーブル
 
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
-| user_id            | references | null: false, foreign_key:true  | 
-| product_name       | references | null: false, foreign_key:true  | 
+| user               | references | null: false, foreign_key:true  | 
+| product            | references | null: false, foreign_key:true  | 
 
 ### Association
- belongs_to :users
- belongs_to :products
+ belongs_to :user
+ belongs_to :product
 
 ##  Productsテーブル
 
@@ -53,5 +56,5 @@
 | price              | integer    | null: false                    | 
 
 ### Association
- belongs_to :users
- has_one :cards
+ belongs_to :user
+ has_one :card
