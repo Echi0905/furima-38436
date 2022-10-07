@@ -76,7 +76,7 @@ RSpec.describe User, type: :model do
       it '名字が全角（漢字・ひらがな・カタカナ）でないと登録できない' do
         @user.family_name = 'yamada'
         @user.valid?
-        expect(@user.errors.full_messages).to include('Last name is invalid')
+        expect(@user.errors.full_messages).to include('Family name is invalid')
       end
       it '名前が全角（漢字・ひらがな・カタカナ）でないと登録できない' do
         @user.first_name = 'rikutaro'
@@ -86,7 +86,7 @@ RSpec.describe User, type: :model do
       it '名字のフリガナが全角（カタカナ）でないと登録できない' do
         @user.family_name_kana = 'やまだ'
         @user.valid?
-        expect(@user.errors.full_messages).to include('Last name kana is invalid')
+        expect(@user.errors.full_messages).to include('Family name kana is invalid')
       end
       it '名前のフリガナが全角（カタカナ）でないと登録できない' do
         @user.first_name_kana = 'りくたろう'
@@ -96,7 +96,7 @@ RSpec.describe User, type: :model do
       it '生年月日が空欄だと保存できない' do
         @user.birth_day = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("Birthday can't be blank")
+        expect(@user.errors.full_messages).to include("Birth day can't be blank")
       end
     end
   end

@@ -4,13 +4,17 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-   with_options presence: true do
+  has_many :items
+  has_many :orders
+  # has_many :comments
+
+  with_options presence: true do
     # 存在すること・確認用を含めて2回入力・6字以上はdeviseのデフォルト実装のため省略
     # 半角英数字（空文字NG）以外の場合には、メッセージを出す
     PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
     validates_format_of :password, with: PASSWORD_REGEX, message: 'Include both letters and numbers'
 
-    validates :nickname, uniqueness: true
+    validates :nickname
     # @含むこと・存在することはdeviseのデフォルト実装のため省略
     validates :email,    uniqueness: true
     # 全角ひらがな、全角カタカナ、漢字
@@ -20,5 +24,5 @@ class User < ApplicationRecord
     validates :family_name_kana, format: { with: /\A[ァ-ヶー－]+\z/ }
     validates :first_name_kana, format: { with: /\A[ァ-ヶー－]+\z/ }
     validates :birth_day
-   end
+  end
 end
