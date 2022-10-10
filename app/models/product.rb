@@ -2,7 +2,7 @@ class Product < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
 
   # テーブルとのアソシエーション
-  belongs_to :furimas
+  belongs_to :product
   has_one    :card
   # has_many :comments
 
