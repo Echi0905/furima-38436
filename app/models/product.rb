@@ -2,7 +2,7 @@ class Product < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
 
   # テーブルとのアソシエーション
-  belongs_to :product
+  belongs_to :user
   has_one    :card
   # has_many :comments
 
