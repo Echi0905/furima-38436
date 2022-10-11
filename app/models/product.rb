@@ -3,7 +3,7 @@ class Product < ApplicationRecord
 
   # テーブルとのアソシエーション
   belongs_to :user
-  has_one    :card
+  # has_one    :card
   # has_many :comments
 
   # アクティブハッシュとのアソシエーション
@@ -17,7 +17,6 @@ class Product < ApplicationRecord
   # （items・active_storage_blobsテーブルを関連付け）
   has_one_attached :image
   
-  validates :user_id,           presence: true
   validates :image,             presence: true
   validates :name,              presence: true
   validates :description,       presence: true
@@ -26,8 +25,7 @@ class Product < ApplicationRecord
   validates :shipping_cost_id,  presence: true
   validates :prefecture_id,     presence: true
   validates :shipping_day_id,   presence: true    
-    # 300円以上かつ9,999,999円以下で、半角数字でないと入力不可
-  validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
+  validates :price,             presence: true, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
 
   # ジャンルの選択が「--」の時は保存不可
   with_options numericality: { other_than: 0 } do

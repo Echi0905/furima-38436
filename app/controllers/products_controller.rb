@@ -1,9 +1,9 @@
 class ProductsController < ApplicationController
  # ログインしていないユーザーはログインページに促す
- before_action :authenticate_user!, except: [:index, :show]
+#  before_action :authenticate_user!, except: [:index, :show]
 
  def index
-   @products = Product.includes(:user).order('created_at DESC')
+  #  @products = Product.includes(:user).order('created_at DESC')
  end
 
  def new
