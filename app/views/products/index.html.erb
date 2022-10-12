@@ -125,7 +125,7 @@
       <% if @products.present? %>
         <% @products.each do |product| %>
           <li class='list'>
-            <%= link_to product_path(product.id) do %>
+            <%= link_to root_path(product.id) do %>
               <div class='item-img-content'>
                 <%= image_tag product.image, class: "item-img" %>
                 <%# 売り切れた場合の表記 %>
@@ -176,16 +176,8 @@
   </div>
   <%# //商品一覧 %>
 </div>
-<div class='purchase-btn'>
+<%= link_to(new_product_path, class: 'purchase-btn') do %>
   <span class='purchase-btn-text'>出品する</span>
-  <% if user_signed_in? %>
-    <%= link_to new_product_path do %>
   <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
-    <% end %>
-  <% else %>
-    <a href="/users/sign_in">
-  <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
-    </a>
-  <% end %>
-</div>
+<% end %>
 <%= render "shared/footer" %>
