@@ -117,23 +117,24 @@
   </div>
   <%# /FURIMAの特徴 %>
 
-<%# 商品一覧 %>
+  <%# 商品一覧 %>
   <div class='item-contents'>
     <h2 class='title'>ピックアップカテゴリー</h2>
-    <%= link_to '新規投稿商品', new_product_path, class: "subtitle" %>
+    <div class="subtitle" >
+      新規投稿商品
+    </div>
     <ul class='item-lists'>
-      <% if @products.present? %>
+      <% if @products[0]!= nil %>
         <% @products.each do |product| %>
           <li class='list'>
-            <%= link_to root_path(product.id) do %>
+            <%= link_to product_path(product.id) do %>
               <div class='item-img-content'>
-                <%= image_tag product.image, class: "item-img" %>
-                <%# 売り切れた場合の表記 %>
-                <%# <% if Cards.exists?(product_id: product.id) %> 
-                  <%# <div class='sold-out'> %>
-                  <%# <span>Sold Out!!</span> %>
-                  <%# </div> %>
-                <%# <% end %> 
+                <%= image_tag product.image, class: "item-img" if product.image.attached? %>
+                <%# 商品が売れていればsold outを表示しましょう(購入機能時に追加する) %>
+                <%# <div class='sold-out'>
+                  <span>Sold Out!!</span>
+                </div> %>
+              <%# //商品が売れていればsold outを表示しましょう %>
 
               </div>
               <div class='item-info'>
