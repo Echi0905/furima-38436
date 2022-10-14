@@ -35,8 +35,11 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product.destroy
-    redirect_to action: :index
+    if @product.destroy
+      redirect_to root_path
+    else
+      render :show
+    end
   end
 
   private
