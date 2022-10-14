@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  # has_many :products
+  has_many :products
   # has_many :cards
   # has_many :comments
 
@@ -16,8 +16,8 @@ class User < ApplicationRecord
 
     validates :nickname
     # 全角ひらがな、全角カタカナ、漢字
-    validates :family_name, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/}
-    validates :first_name, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/}
+    validates :family_name, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/ }
+    validates :first_name, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/ }
     # 全角カタカナ
     validates :family_name_kana, format: { with: /\A[ァ-ヶー－]+\z/ }
     validates :first_name_kana, format: { with: /\A[ァ-ヶー－]+\z/ }

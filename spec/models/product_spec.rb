@@ -107,7 +107,7 @@ RSpec.describe Product, type: :model do
         @product.valid?
         expect(@product.errors.full_messages).to include("Shipping day can't be blank", 'Shipping day is not a number')
       end
-      
+
       it '価格が空欄だと出品できない' do
         @product.price = nil
         @product.valid?
@@ -121,14 +121,14 @@ RSpec.describe Product, type: :model do
       end
 
       it '価格の範囲が、9,999,999円を超えると出品できない' do
-        @product.price = 10000000
+        @product.price = 10_000_000
         @product.valid?
         expect(@product.errors.full_messages).to include('Price must be less than or equal to 9999999')
       end
-        it '半角数字以外の値が含まれている場合は保存できないこと' do
+      it '半角数字以外の値が含まれている場合は保存できないこと' do
         @product.price = 'ABC'
         @product.valid?
-        expect(@product.errors.full_messages).to include("Price is not a number")    
+        expect(@product.errors.full_messages).to include('Price is not a number')
       end
     end
   end
