@@ -7,7 +7,6 @@
     </h2>
     <div class="item-img-content">
       <%= image_tag @product.image, class:"item-box-img" %>
-<<<<<<< Updated upstream
     
     <% if @product.card.present? %>
       <div class="sold-out">
@@ -16,14 +15,7 @@
      <% end %>
 
     </div>
-=======
-      <%# 商品が売れている場合は、sold outを表示しましょう(購入機能時に追加する) 
-      <%# div class="sold-out">
-        <span>Sold Out!!</span>
-      </div>
-      <%# //商品が売れている場合は、sold outを表示しましょう %>
-    </div> %>
->>>>>>> Stashed changes
+
     <div class="item-price-box">
       <span class="item-price">¥<%= @product.price%></span>
       <span class="item-postage">
