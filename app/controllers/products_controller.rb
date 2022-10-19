@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  before_action :check_current_user, only: [:edit, :update]
+  before_action :check_current_user, only: [:edit, :update, :destroy]
   before_action :move_to_index, except: [:index, :show]
 
   def index
@@ -24,10 +24,6 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    if @product.user_id == current_user.id && @product.card.nil?
-    else
-      redirect_to root_path
-    end
   end
 
   def update
@@ -39,12 +35,8 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    if @product.user_id == current_user.id
-      @product.destroy
-      redirect_to root_path
-    else
-      redirect_to root_path
-    end
+    @product.destroy
+    redirect_to root_path
   end
 
   private
