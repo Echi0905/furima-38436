@@ -100,6 +100,11 @@ RSpec.describe CardForm, type: :model do
         @card_form.valid?
         expect(@card_form.errors.full_messages).to include('Phone number is invalid')
       end
+      it '電話番号が9桁以下では購入できないこと' do
+        @card_form.phone_number = 123456789
+        @card_form.valid?
+        expect(@card_form.errors.full_messages).to include('Phone number is invalid')
+      end
       it 'トークンが空だと保存できないこと' do
         @card_form.token = nil
         @card_form.valid?
