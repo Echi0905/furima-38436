@@ -24,6 +24,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    @product.card.nil?
   end
 
   def update
