@@ -17,23 +17,23 @@
 
 ##  Destinationsテーブル
 
-| Column             | Type      | Options                        |
-| ------------------ | --------- | ------------------------------ |
-| post_code          | string    | null: false                    | 
-| prefecture_id      | integer   | null: false                    |
-| city               | string    | null: false                    |
-| address            | string    | null: false                    |
-| building_name      | string    |                                |
-| phone_number       | string    | null: false                    |
-| card               | references| null: false, foreign_key:true  |
+| Column             | Type      |Options                        |
+| ------------------ | --------- |------------------------------ |
+| post_code          | string  null:false                       | 
+| prefecture_id      | integer   | null:false                    |
+| city               | string    | null:false                    |
+| address            | string    | null:false                    |
+| building_name      |string    |                                |
+| phone_number       | string    | null:false                    |
+| card               | references| null: false,foreign_key:true  |
 
 ### Association
  belongs_to :card
 
 ##  Cardsテーブル
 
-| Column             | Type       | Options                        |
-| ------------------ | ---------- | ------------------------------ |
+| Column             | Type       Options                        |
+| ------------------ | --------- |------------------------------ |
 | user               | references | null: false, foreign_key:true  | 
 | product            | references | null: false, foreign_key:true  | 
 
@@ -44,8 +44,8 @@
 
 ##  Productsテーブル
 
-| Column             | Type       | Options                        |
-| ------------------ | -----------| ------------------------------ |
+| Column             | Type       Options                        |
+| ------------------ | ----------|------------------------------ |
 | user               | references | null: false, foreign_key:true  | 
 | name               | string     | null: false                    | 
 | description        | text       | null: false                    |

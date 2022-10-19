@@ -3,8 +3,7 @@ class Product < ApplicationRecord
 
   # テーブルとのアソシエーション
   belongs_to :user
-  # has_one    :card
-  # has_many :comments
+  has_one    :card
 
   # アクティブハッシュとのアソシエーション
   belongs_to :category

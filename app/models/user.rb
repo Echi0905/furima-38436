@@ -5,8 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :products
-  # has_many :cards
-  # has_many :comments
+  has_many :cards
 
   with_options presence: true do
     # 存在すること・確認用を含めて2回入力・6字以上はdeviseのデフォルト実装のため省略
