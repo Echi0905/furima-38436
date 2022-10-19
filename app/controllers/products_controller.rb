@@ -24,7 +24,6 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product.card.nil?
   end
 
   def update
@@ -52,7 +51,7 @@ class ProductsController < ApplicationController
   end
 
   def check_current_user
-    redirect_to action: :index if user_signed_in? && @product.user_id != current_user.id
+    redirect_to action: :index if user_signed_in? && @product.user_id != current_user.id && @product.card.nil?
   end
 
   def move_to_index
