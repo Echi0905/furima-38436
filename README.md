@@ -17,17 +17,6 @@
 
 ##  Destinationsテーブル
 
-<<<<<<< Updated upstream
-| Column             | Type      |Options                        |
-| ------------------ | --------- |------------------------------ |
-| post_code          | string  null:false                       | 
-| prefecture_id      | integer   | null:false                    |
-| city               | string    | null:false                    |
-| address            | string    | null:false                    |
-| building_name      |string    |                                |
-| phone_number       | string    | null:false                    |
-| card               | references| null: false,foreign_key:true  |
-=======
 | Column             | Type   | Options                        |
 | ------------------ | ------ | ------------------------------ |
 | post_code          | string | null: false                    | 
@@ -37,7 +26,6 @@
 | building_name      | string | null: false                    |
 | phone_number       | string | null: false                    |
 | user_id            | string | null: false                    |
->>>>>>> Stashed changes
 
 ### Association
  belongs_to :card
@@ -72,18 +60,4 @@
 ### Association
  belongs_to :user
  has_one :card
-=======
- 
-##  Productテーブル
 
-| Column             | Type   | Options                        |
-| ------------------ | ------ | ------------------------------ |
-| name               | string | null: false                    | 
-| description        | string | null: false                    |
-| status             | string | null: false                    |
-| shipping_cost      | string | null: false                    |
-| shipping_days      | string | null: false                    |
-| prefecture_id      | string | null: false                    |
-| price              | string | null: false                    | 
-
->>>>>>> Stashed changes
