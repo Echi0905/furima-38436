@@ -142,7 +142,7 @@
                   <%= product.name %>
                 </h3>
                 <div class='item-price'>
-                  <span><%= product.price.to_s(:delimited) %>円<br>(税込み)</span>
+                  <span><%= product.price.to_s(:delimited) %>円<br>(税込み)<%= '配送料負担' %></span>
                   <div class='star-btn'>
                     <%= image_tag "star.png", class:"star-icon" %>
                     <span class='star-count'>0</span>
