@@ -11,7 +11,7 @@ class User < ApplicationRecord
     # 存在すること・確認用を含めて2回入力・6字以上はdeviseのデフォルト実装のため省略
     # 半角英数字（空文字NG）以外の場合には、メッセージを出す
     PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
-    validates_format_of :password, with: PASSWORD_REGEX, message: 'Include both letters and numbers'
+    validates_format_of :password, with: PASSWORD_REGEX, message: 'を入力してください'
 
     validates :nickname
     # 全角ひらがな、全角カタカナ、漢字
