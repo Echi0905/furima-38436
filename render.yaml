@@ -1,7 +1,7 @@
 databases:
   - name: furima_38436_development
     databaseName: furima_38436_development
-    user: furima furima 
+    user: furima furima furima
     region: singapore
 
 services:
